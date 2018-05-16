@@ -47,11 +47,16 @@ class initSongList
 
     public function getRecommendList()
     {
-        $recommendList = array();
         $returnList = array();
         $recommendNum = 20;
         //推荐歌单歌曲数量
-        if (count($this->tags)) {
+        if ($this->tags[0] === "") {
+            $sql2 = "SELECT song_id,song_name,tag,coverimg_url FROM music_list ORDER BY RAND() limit 20";
+            $result = $this->linkSql($sql2);
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                array_push($returnList, $row);
+            }
+        } else {
             $arrLenght = count($this->tags);
             $limitNum = round($recommendNum / $arrLenght);
             //四舍五入计算要推荐类型歌曲的数量
@@ -62,12 +67,7 @@ class initSongList
                     array_push($returnList, $row);
                 }
             }
-        } else {
-            $sql2 = "SELECT song_id,song_name,coverimg_url FROM music_list ORDER BY RAND() limit 20";
-            $result = $this->linkSql($sql2);
-            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                array_push($returnList, $row);
-            }
+
         }
         return json_encode($returnList);
         //包含song_id,song_name的数组

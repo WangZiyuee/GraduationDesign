@@ -1,13 +1,35 @@
 $(document).ready(function() {
+  var songlist = new Array();
+  $('#like-icon').hide();
   $('#back-icon').click(function() {
     window.history.back(-1);
+  });
+  $("#next-icon").click(function(event) {
+    $.ajax({
+        url: '/path/to/file',
+        type: 'default GET (Other values: POST)',
+        dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+        data: {
+          param1: 'value1'
+        }
+      })
+      .done(function() {
+        console.log("success");
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+
   });
 
   var result = window.location.search.match(new RegExp("[\?\&]" + "userid" + "=([^\&]+)", "i"));
   console.log(result[1]);
   var userid = result[1];
 
-  var songlist = new Array();
+
 
   $("#submit").click(function() {
     var tags = new Array();
@@ -29,6 +51,7 @@ $(document).ready(function() {
         $("h3").text("推荐歌单");
         $("#choosebox").hide();
         $("#list").show();
+        $('#like-icon').show();
         var item = data;
         for (var i = 0; i < item.length; i++) {
 
@@ -101,16 +124,31 @@ $(document).ready(function() {
 
               }
             });
-
           });
         }
-
-
       }
     });
   });
 
   $('#like-icon').click(function() {
+    $.ajax({
+        url: '/path/to/file',
+        type: 'default GET (Other values: POST)',
+        dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+        data: {
+          param1: 'value1'
+        }
+      })
+      .done(function() {
+        console.log("success");
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+
     $(this).css("background-image", "url('image/likefull-icon.png')");
     console.log(userid);
     //改变songid标签的歌曲背景颜色
