@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Music</title>
+
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+  <script src="jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="bootcss/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dist/APlayer.min.css">
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 left">
+        <div class="jumbotron">
+          <h1><em>Welcome!</em></h1>
+          <p>...</p>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4 right ">
+
+        <div class="login-content" id="login-content">
+          <h2>登录</h2>
+          <hr>
+          <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>
+            </span>
+            <input id="login-username" type="text" class="form-control" autofocus="autofocus" placeholder="(ง •_•)ง">
+            <span class="input-group-btn">
+                <button id="signin-button" class="btn" type="button">Signin  <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+            </span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon glyphicon-lock" aria-hidden="true"></span>
+            </span>
+            <input id="login-userpassword" type="password" class="form-control" placeholder="(ง •_•)ง">
+            <span class="input-group-btn">
+              <button id="login-btn" class="btn">Login &nbsp;<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></button>
+            </span>
+          </div>
+        </div>
+
+        <div class="signin-content" id="signin-content" style="display:none;">
+          <h2>注册</h2>
+          <hr>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </span>
+            <input id="signin-username" type="text" class="form-control" placeholder="请输入注册邮箱">
+            <span class="input-group-addon">
+              <span id="signin-name-check" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon glyphicon-lock" aria-hidden="true"></span>
+            </span>
+            <input id="signin-fpassword" type="password" class="form-control" placeholder="输入密码">
+            <span class="input-group-addon">
+              <span id="password-fcheck" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+            </span>
+            <input id="signin-spassword" type="password" class="form-control" placeholder="再次输入">
+            <span class="input-group-addon">
+              <span id="password-scheck" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+              <button id="signin-back-button" class="btn" type="button">Back  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button>
+            </div>
+            <div class="col-md-3 col-md-offset-3">
+              <button id="signin-btn" class="btn" type="button">Signin  <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer">
+        <hr>
+        <em>@Wang</em>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>

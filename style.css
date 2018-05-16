@@ -1,0 +1,113 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: black;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.row {
+  height: 0px;
+  padding-bottom: 100%;
+}
+
+.right {
+  padding: 40px;
+  background: #f8f8f8;
+  height: 0px;
+  padding-bottom: 100%;
+}
+
+.left {
+  height: 0px;
+  padding-bottom: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.jumbotron {
+  height: 0;
+  padding-bottom: 100%;
+  background-image: url('http://cdn.topits.me/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180422214216.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.jumbotron>h1 {
+  padding-top: 20%;
+  color: #fff;
+}
+
+.jumbotron>p {
+  color: #fff;
+}
+
+.footer {
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
+  color: #ddd;
+  z-index: 100;
+  width: 24%;
+  height: 50px;
+}
+
+/*登录界面*/
+
+.login-content {
+  width: 80%;
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+.input-group-addon {
+  color: #ff6484;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn {
+  background-color: #ff6484;
+  color: #fff;
+  background: #ff6484;
+  border-color: #ff6484;
+}
+
+.form-control:focus {
+  border: 2px solid #ff6484;
+  /*border-color: #ff6484;*/
+  outline: 0;
+  /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(254,115,115,.6);*/
+  /*box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(254,115,115,1);*/
+}
+
+.btn:hover {
+  color: #fff;
+  background: #ff6484;
+  border-color: #ff6484;
+}
+
+.btn:focus {
+  color: #fff;
+  background: #ff6484;
+  border-color: #ff6484;
+}
+
+/*注册界面*/
+
+.signin-content {
+  width: 80%;
+}
