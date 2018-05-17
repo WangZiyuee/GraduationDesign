@@ -34,16 +34,6 @@ class initSongList
         return mysqli_query($link, $sql);
     }
 
-//    public function getHotList()
-//    {
-//
-//    }
-//    public function getUserlikeList(){
-//
-//    }
-//public function getRandList(){
-//
-//}
 
     public function getRecommendList()
     {
@@ -51,7 +41,7 @@ class initSongList
         $recommendNum = 20;
         //推荐歌单歌曲数量
         if ($this->tags[0] === "") {
-            $sql2 = "SELECT song_id,song_name,tag,coverimg_url FROM music_list ORDER BY RAND() limit 20";
+            $sql2 = "SELECT song_id,song_name,tag,coverimg_url,song_tag FROM music_list ORDER BY RAND() limit 20";
             $result = $this->linkSql($sql2);
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 array_push($returnList, $row);
@@ -61,7 +51,7 @@ class initSongList
             $limitNum = round($recommendNum / $arrLenght);
             //四舍五入计算要推荐类型歌曲的数量
             for ($i = 0; $i < $arrLenght; $i++) {
-                $sql1 = "SELECT song_id,song_name,tag,coverimg_url FROM music_list WHERE song_tag = " . $this->tags[$i] . " ORDER BY RAND() limit $limitNum";
+                $sql1 = "SELECT song_id,song_name,tag,coverimg_url,song_tag FROM music_list WHERE song_tag = " . $this->tags[$i] . " ORDER BY RAND() limit $limitNum";
                 $result = $this->linkSql($sql1);
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     array_push($returnList, $row);
@@ -71,5 +61,9 @@ class initSongList
         }
         return json_encode($returnList);
         //包含song_id,song_name的数组
+    }
+
+    public function getHotList(){
+
     }
 }

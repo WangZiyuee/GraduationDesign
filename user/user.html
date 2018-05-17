@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>选择你喜欢的类型</title>
+  <title>推荐歌单</title>
 
   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -36,20 +36,20 @@
 
           <div class="col-md-2">
             <div class="like-button">
-              <a id="like-icon" href="javascript:void(0)" song-id="">
+              <a id="like-icon" href="javascript:void(0)" song-id="" tag-code="">
               </a>
             </div>
           </div>
 
         </div>
 
-        <a id="next-icon" href="javascript:void(0)">
-          <div class="next-button">
-          </div>
-        </a>
       </div>
 
       <div class="col-md-4 right ">
+        <a id="next-icon">
+          <div class="next-button">
+          </div>
+        </a>
         <h3>选择你喜欢的类型</h3>
         <hr>
         <div id="list" class="list-group media" style="display:none;">
@@ -103,7 +103,7 @@
               </div>
 
             </div>
-            <button id="submit" type="button" class="btn btn-submit">提交 &nbsp;<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+            <button id="submit" type="button" class="btn btn-submit">提交or随便听听&nbsp;<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
             <hr>
           </div>
         </div>
@@ -121,7 +121,7 @@
 
 
   <script src="dist/APlayer.min.js"></script>
-  <script src="signin.js"></script>
+  <script src="a.js"></script>
 </body>
 
 </html>

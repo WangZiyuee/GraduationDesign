@@ -1,32 +1,33 @@
 $(document).ready(function() {
   var songlist = new Array();
-  // var songNameList = new Array();
-  // var imgList = new Array();
+
+  $('#back-icon').click(function() {
+    window.history.back(-1);
+  });
+
 
   var result = window.location.search.match(new RegExp("[\?\&]" + "userid" + "=([^\&]+)", "i"));
   console.log(result[1]);
-  var userid=result[1];
+  var userid = result[1];
 
   $.ajax({
-    type: "POST",
-    url: "../Api/test2.php",
-    dataType: "json",
-    data: {
-      userId: result[1]
-    },
-    success: function(data) {
+      url: '../Api/song/getUserLike.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        userId: userid
+      }
+    })
+    .done(function(data) {
+      console.log("success");
       var item = data;
-
       for (var i = 0; i < item.length; i++) {
 
         var songId = item[i]['song_id'];
         var songName = item[i]['song_name'];
         var coverImgUrl = item[i]['coverimg_url'];
-
         songlist.push(songId);
-        // songNameList.push(songName);
-        // imgList.push(coverImgUrl);
-
+        // songlist.push(songId);
         $("#list").append('<a id="' + songId + '" href="javascript:void(0)" class="list-group-item">' +
           '<div class="media-left">' +
           '<img class="media-object" src="' + coverImgUrl + '" alt="...">' +
@@ -36,21 +37,26 @@ $(document).ready(function() {
           '</div>' +
           '</a>');
       }
+      console.log(data);
+
       const ap = new APlayer({
         container: document.getElementById('aplayer'),
         theme: '#ff6484',
         audio: [{
           name: 'name',
           artist: 'artist',
-          url: 'url.mp3',
-          cover: 'cover.jpg'
+          url: '',
+          cover: ''
         }]
       });
-    },
-    complete: function() {
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
       for (var j = 0; j < songlist.length; j++) {
         $('#' + songlist[j]).click(function(event) {
-
           var name = $(this).find(".media-body").text();
           var imgUrl = $(this).find("img").attr("src");
           var songID = $(this).attr("id");
@@ -77,30 +83,15 @@ $(document).ready(function() {
                 }]
               });
               $("#bgurl").css("background-image", 'url(' + imgUrl + ')');
-              $('#like-icon').attr('song-id', songID);
             },
             error: function() {
               console.log('error');
             },
-            complete: function() {
-
-            }
+            complete: function() {}
           });
-
         });
       }
 
-    }
-
-  });
-  $('#back-icon').click(function() {
-    window.history.back(-1);
-  });
-  $('#like-icon').click(function() {
-    $(this).css("background-image", "url('image/likefull-icon.png')");
-    console.log(userid);
-    console.log($('#like-icon').attr('song-id'));
-    //这里执行喜欢歌曲的插入
-  });
+    });
 
 });

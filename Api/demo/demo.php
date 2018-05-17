@@ -8,3 +8,4 @@
  * Description:
  */
 
+$sql="CREATE TABLE `player`.`user10001` ( `song_id` INT NOT NULL , `tag` INT NOT NULL , `time` DATE NOT NULL , PRIMARY KEY (`song_id`)) ENGINE = InnoDB";

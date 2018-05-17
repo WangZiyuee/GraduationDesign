@@ -47,7 +47,7 @@ $("#signin-btn").click(function() {
           alert("用户名重复");
         } else {
           var userId = data;
-          window.location.href = 'user/index.html?userId=' + userId;
+          window.location.href = 'suggest/user.html?userId=' + userId;
         }
       },
       error: function() {
@@ -75,7 +75,7 @@ $("#login-btn").click(function() {
           alert("密码错误或者账户不存在");
         } else {
           var userId = data;
-          window.location.href = 'Main/index.html?userId=' + userId;
+          window.location.href = 'user/user.html?userId=' + userId;
         }
       },
       error: function() {

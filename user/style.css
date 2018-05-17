@@ -88,6 +88,7 @@ html, body {
   padding: 0;
   background-color: #f6f6f6;
   border: 0;
+  border-radius: 4px;
   /*min-height: 40px;*/
 }
 
@@ -176,8 +177,6 @@ a>.media-body:visited {
   height: 106px;
   width: 106px;
   z-index: 100;
-  background-image: url('image/back-icon.png');
-  background-repeat: no-repeat;
 }
 
 #back-icon {
@@ -185,8 +184,31 @@ a>.media-body:visited {
   width: 106px;
 }
 
-.back-button:hover {}
+.back-button:hover {
+  background-image: url('image/back-icon.png');
+  background-repeat: no-repeat;
+}
 
+/*next button*/
+
+.next-button {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  height: 106px;
+  width: 106px;
+  z-index: 10001;
+}
+
+#next-icon {
+  height: 106px;
+  width: 106px;
+}
+
+.next-button:hover {
+  background-image: url('image/next-icon.png');
+  background-repeat: no-repeat;
+}
 
 /*like button*/
 
@@ -197,7 +219,7 @@ a>.media-body:visited {
 #like-icon {
   background-image: url('image/like-icon.png');
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 10%;
   height: 106px;
   width: 106px;
   margin: 0 auto;
@@ -210,7 +232,7 @@ a>.media-body:visited {
 #like-icon:hover, #like-icon:focus, #like-icon:visited {
   background-image: url('image/likefull-icon.png');
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 10%;
 }
 
 /*footer*/

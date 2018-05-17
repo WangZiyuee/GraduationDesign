@@ -4,26 +4,6 @@ $(document).ready(function() {
   $('#back-icon').click(function() {
     window.history.back(-1);
   });
-  $("#next-icon").click(function(event) {
-    $.ajax({
-        url: '/path/to/file',
-        type: 'default GET (Other values: POST)',
-        dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-        data: {
-          param1: 'value1'
-        }
-      })
-      .done(function() {
-        console.log("success");
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
-      });
-
-  });
 
   var result = window.location.search.match(new RegExp("[\?\&]" + "userid" + "=([^\&]+)", "i"));
   console.log(result[1]);
@@ -58,9 +38,10 @@ $(document).ready(function() {
           var songId = item[i]['song_id'];
           var songName = item[i]['song_name'];
           var coverImgUrl = item[i]['coverimg_url'];
+          var songTag = item[i]['song_tag'];
           songlist.push(songId);
           // songlist.push(songId);
-          $("#list").append('<a id="' + songId + '" href="javascript:void(0)" class="list-group-item">' +
+          $("#list").append('<a id="' + songId + '" tag-code="' + songTag + '" href="javascript:void(0)" class="list-group-item">' +
             '<div class="media-left">' +
             '<img class="media-object" src="' + coverImgUrl + '" alt="...">' +
             '</div>' +
@@ -92,7 +73,7 @@ $(document).ready(function() {
             var name = $(this).find(".media-body").text();
             var imgUrl = $(this).find("img").attr("src");
             var songID = $(this).attr("id");
-
+            var songTag = $(this).attr("tag-code");
             $.ajax({
               type: "POST",
               url: "../Api/getSongUrl.php",
@@ -116,6 +97,7 @@ $(document).ready(function() {
                 });
                 $("#bgurl").css("background-image", 'url(' + imgUrl + ')');
                 $('#like-icon').attr('song-id', songID);
+                $('#like-icon').attr('tag-code', songTag);
               },
               error: function() {
                 console.log('error');
@@ -131,16 +113,26 @@ $(document).ready(function() {
   });
 
   $('#like-icon').click(function() {
+    // $(this).css("background-image", "url('image/likefull-icon.png')");
+
+    var songId = $('#like-icon').attr('song-id');
+    var tag = $('#like-icon').attr('tag-code');
+    console.log($('#like-icon').attr('song-id') + ".songid");
+    console.log($('#like-icon').attr('tag-code') + ".tagcode");
+    $('#' + songId + '').css("background-color", '#ff6488');
+
     $.ajax({
-        url: '/path/to/file',
-        type: 'default GET (Other values: POST)',
-        dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+        url: '../Api/song/addUserLike.php',
+        type: 'POST',
+        dataType: 'json',
         data: {
-          param1: 'value1'
+          songId: songId,
+          userId: userid,
+          tag: tag
         }
       })
-      .done(function() {
-        console.log("success");
+      .done(function(data) {
+        console.log("success:" + data);
       })
       .fail(function() {
         console.log("error");
@@ -149,11 +141,13 @@ $(document).ready(function() {
         console.log("complete");
       });
 
-    $(this).css("background-image", "url('image/likefull-icon.png')");
-    console.log(userid);
+
+    // console.log(userid);
     //改变songid标签的歌曲背景颜色
-    console.log($('#like-icon').attr('song-id'));
+
     //这里执行喜欢歌曲的插入
   });
-
+  $("#next-icon").click(function() {
+    window.location.href = '../like/like.html?userId=' + userid;
+  });
 });
