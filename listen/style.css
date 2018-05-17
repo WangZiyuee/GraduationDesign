@@ -49,8 +49,8 @@ html, body {
 }
 
 .btn-submit {
-  margin-left: 50%;
   margin-top: 30%;
+  margin-left: 50%;
   width: 40%;
   background-color: #ff6484;
   color: #fff;
@@ -67,29 +67,6 @@ html, body {
 }
 
 .btn-submit.active, .btn-submit:active {
-  background-color: #ff6484;
-  color: #fff;
-}
-
-.btn-another {
-  margin-top: 10px;
-  margin-left: 50%;
-  width: 40%;
-  background-color: #ff6484;
-  color: #fff;
-}
-
-.btn-another:focus, .btn-another.focus {
-  background-color: #ff6484;
-  color: #fff;
-}
-
-.btn-another:hover {
-  background-color: #ff6484;
-  color: #fff;
-}
-
-.btn-another.active, .btn-another:active {
   background-color: #ff6484;
   color: #fff;
 }
@@ -242,7 +219,7 @@ a>.media-body:visited {
 #like-icon {
   background-image: url('image/like-icon.png');
   background-repeat: no-repeat;
-  background-position: 50% 10%;
+  background-position: 50% 50%;
   height: 106px;
   width: 106px;
   margin: 0 auto;
@@ -255,7 +232,7 @@ a>.media-body:visited {
 #like-icon:hover, #like-icon:focus, #like-icon:visited {
   background-image: url('image/likefull-icon.png');
   background-repeat: no-repeat;
-  background-position: 50% 10%;
+  background-position: 50% 50%;
 }
 
 /*footer*/

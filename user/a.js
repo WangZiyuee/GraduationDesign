@@ -150,4 +150,7 @@ $(document).ready(function() {
   $("#next-icon").click(function() {
     window.location.href = '../like/like.html?userId=' + userid;
   });
+  $("#another").click(function() {
+    window.location.href = '../listen/listen.html?userId=' + userid;
+  });
 });
