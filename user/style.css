@@ -208,7 +208,7 @@ a>.media-body:visited {
 }
 
 .back-button:hover {
-  background-image: url('image/back-icon.png');
+  background-image: url('../image/back-icon.png');
   background-repeat: no-repeat;
 }
 
@@ -229,7 +229,7 @@ a>.media-body:visited {
 }
 
 .next-button:hover {
-  background-image: url('image/next-icon.png');
+  background-image: url('../image/next-icon.png');
   background-repeat: no-repeat;
 }
 
@@ -240,7 +240,7 @@ a>.media-body:visited {
 }
 
 #like-icon {
-  background-image: url('image/like-icon.png');
+  background-image: url('../image/like-icon.png');
   background-repeat: no-repeat;
   background-position: 50% 10%;
   height: 106px;
@@ -253,7 +253,7 @@ a>.media-body:visited {
 }
 
 #like-icon:hover, #like-icon:focus, #like-icon:visited {
-  background-image: url('image/likefull-icon.png');
+  background-image: url('../image/likefull-icon.png');
   background-repeat: no-repeat;
   background-position: 50% 10%;
 }

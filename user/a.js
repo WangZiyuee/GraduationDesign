@@ -148,9 +148,9 @@ $(document).ready(function() {
     //这里执行喜欢歌曲的插入
   });
   $("#next-icon").click(function() {
-    window.location.href = '../like/like.html?userId=' + userid;
+    window.location.href = '../like?userId=' + userid;
   });
   $("#another").click(function() {
-    window.location.href = '../listen/listen.html?userId=' + userid;
+    window.location.href = '../listen?userId=' + userid;
   });
 });

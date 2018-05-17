@@ -114,7 +114,41 @@ $(document).ready(function() {
     .always(function() {
       console.log("complete");
     });
-
+// $('#like-icon').click(function() {
+//   // $(this).css("background-image", "url('image/likefull-icon.png')");
+//
+//   var songId = $('#like-icon').attr('song-id');
+//   var tag = $('#like-icon').attr('tag-code');
+//   console.log($('#like-icon').attr('song-id') + ".songid");
+//   console.log($('#like-icon').attr('tag-code') + ".tagcode");
+//   $('#' + songId + '').css("background-color", '#ff6488');
+//
+//   $.ajax({
+//       url: '../Api/song/addUserLike.php',
+//       type: 'POST',
+//       dataType: 'json',
+//       data: {
+//         songId: songId,
+//         userId: userid,
+//         tag: tag
+//       }
+//     })
+//     .done(function(data) {
+//       console.log("success:" + data);
+//     })
+//     .fail(function() {
+//       console.log("error");
+//     })
+//     .always(function() {
+//       console.log("complete");
+//     });
+//
+//
+//   // console.log(userid);
+//   //改变songid标签的歌曲背景颜色
+//
+//   //这里执行喜欢歌曲的插入
+// });
 
 
 });
