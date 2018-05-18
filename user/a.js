@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var songlist = new Array();
+  $("#bgurl").css('background-image', "url('../image/eva.jpg')");
   $('#like-icon').hide();
   $('#back-icon').click(function() {
     window.history.back(-1);
@@ -56,10 +57,10 @@ $(document).ready(function() {
           container: document.getElementById('aplayer'),
           theme: '#ff6484',
           audio: [{
-            name: 'name',
-            artist: 'artist',
-            url: '',
-            cover: ''
+            name: '高橋洋子 - 残酷な天使のテーゼ',
+            artist: '高桥洋子',
+            url: '../demo/eva.mp3',
+            cover: '../image/eva.jpg'
           }]
         });
       },

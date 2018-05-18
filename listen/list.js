@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var songlist = new Array();
+  $("#bgurl").css('background-image', "url('../image/eva.jpg')");
 
   $('#back-icon').click(function() {
     window.history.back(-1);
