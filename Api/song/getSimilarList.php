@@ -116,6 +116,7 @@ for ($i = 0; $i < count($rowM); $i++) {
                 break;
             default:
                 echo "default";
+            //对于空tag需要进行判断
         }
     }
     $tags[$i]["fashion"] = $fashion;
@@ -134,7 +135,7 @@ for ($i = 0; $i < count($rowM); $i++) {
     //降序排列
 //    echo "END".end($userSimilarity);
 //    echo "ID".key($userSimilarity);
-    $simiUserId=key($userSimilarity);
+    $simiUserId = key($userSimilarity);
 
 }
 //$similarity = dotp($tags[0], $userTags) / sqrt(dotp($userTags, $userTags) * dotp($tags[0], $tags[0]));

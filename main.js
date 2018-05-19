@@ -47,7 +47,7 @@ $("#signin-btn").click(function() {
           alert("用户名重复");
         } else {
           var userId = data;
-          window.location.href = 'user/user.html?userId=' + userId;
+          window.location.href = 'user?userId=' + userId;
         }
       },
       error: function() {
