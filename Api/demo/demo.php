@@ -62,9 +62,9 @@ $userTags["classical"] = $classical;
 $userTags["matel"] = $matel;
 $userTags["jazz"] = $jazz;
 
-echo "userTags" . "</br>";
+echo "userTags:" .$userId. "</br>";
 var_dump($userTags);
-echo array_sum($userTags);
+echo "userLikeSongNum:".array_sum($userTags)."</br>";
 //用户标签数组
 
 
@@ -116,7 +116,7 @@ for ($i = 0; $i < count($rowM); $i++) {
                 $jazz++;
                 break;
             default:
-                echo "default";
+                $tags=null;
             //对于空tag需要进行判断
         }
     }
@@ -127,16 +127,17 @@ for ($i = 0; $i < count($rowM); $i++) {
     $tags[$i]["classical"] = $classical;
     $tags[$i]["matel"] = $matel;
     $tags[$i]["jazz"] = $jazz;
-    echo "tags" . "</br>";
+    echo "AnotherUsertags" . "</br>";
     var_dump($tags);
-    echo array_sum($tags[$i])."</br>";
+    echo "userLikeSongNum:".array_sum($tags[$i])."</br>";
     //对比用户的tags数组
     $userSimilarity[$id] = dotp($tags[$i], $userTags) / sqrt(dotp($userTags, $userTags) * dotp($tags[$i], $tags[$i]));
     asort($userSimilarity);
     //降序排列
-    echo "END".end($userSimilarity)."</br>";
-    echo "ID".key($userSimilarity)."</br>";
+    echo "EndUser".end($userSimilarity)."</br>";
+    echo "UserId".key($userSimilarity)."</br>";
     $simiUserId = key($userSimilarity);
+    $tags = null;
 
 }
 //$similarity = dotp($tags[0], $userTags) / sqrt(dotp($userTags, $userTags) * dotp($tags[0], $tags[0]));
